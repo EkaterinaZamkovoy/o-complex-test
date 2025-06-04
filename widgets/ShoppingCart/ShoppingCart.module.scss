@@ -1,0 +1,83 @@
+.cart {
+  max-width: 708px;
+  background: $secondary-background-color;
+  border-radius: 15px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  > li {
+    font-size: 24px;
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  width: 100%;
+
+  .input {
+    max-width: 401px;
+    width: 100%;
+    font-size: 36px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid $main-background-color;
+    background-color: $main-background-color;
+    color: $light-text-color;
+  }
+
+  .error {
+    border-color: red;
+  }
+
+  button {
+    max-width: 268px;
+    width: 100%;
+    padding: 7px 15px;
+    font-size: 36px;
+    border-radius: 15px;
+    background: $main-background-color;
+    color: $light-text-color;
+    cursor: pointer;
+    border: 2px solid $main-background-color;
+
+    &:hover {
+      background-color: $light-text-color;
+      color: $main-background-color;
+      border: 2px solid $main-background-color;
+    }
+
+    &:active {
+      background-color: $main-background-color;
+      color: $light-text-color;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      border: 2px solid $main-background-color;
+      background: $main-background-color;
+      color: $light-text-color;
+    }
+  }
+}
+
+.success {
+  font-size: 36px;
+  text-align: center;
+}

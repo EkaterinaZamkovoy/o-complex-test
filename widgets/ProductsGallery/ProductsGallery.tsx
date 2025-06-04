@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './ProductsGallery.module.scss';
 import { useLazyGetProductsQuery } from '@/features/products/api';
 import { ProductCard, useCart } from '@/shared';
+import { ShoppingCart } from '../ShoppingCart';
 
 export const ProductsGallery = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
-  const { cart, addItem, removeItem, changeQuantity } = useCart();
+  const { cart, addItem, removeItem, changeQuantity, clearCart } = useCart();
   const [fetchProducts, { data, isFetching }] = useLazyGetProductsQuery();
   const observerRef = useRef<HTMLDivElement | null>(null);
 
@@ -47,23 +48,26 @@ export const ProductsGallery = () => {
   }, [hasMore, isFetching]);
 
   return (
-    <div className={styles.grid}>
-      {products.map((item) => (
-        <ProductCard
-          key={item.id}
-          product={item}
-          quantity={cart[item.id] || 0}
-          onAdd={() => addItem(item.id)}
-          onRemove={() => removeItem(item.id)}
-          onChangeQuantity={(value) => changeQuantity(item.id, value)}
-        />
-      ))}
+    <div>
+      <ShoppingCart cart={cart} products={products} clearCart={clearCart} />
+      <div className={styles.grid}>
+        {products.map((item) => (
+          <ProductCard
+            key={item.id}
+            product={item}
+            quantity={cart[item.id] || 0}
+            onAdd={() => addItem(item.id)}
+            onRemove={() => removeItem(item.id)}
+            onChangeQuantity={(value) => changeQuantity(item.id, value)}
+          />
+        ))}
 
-      {hasMore && (
-        <div ref={observerRef} className={styles.loader}>
-          Загрузка...
-        </div>
-      )}
+        {hasMore && (
+          <div ref={observerRef} className={styles.loader}>
+            Загрузка...
+          </div>
+        )}
+      </div>
     </div>
   );
 };

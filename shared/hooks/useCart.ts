@@ -38,10 +38,16 @@ export const useCart = () => {
     }
   };
 
+  const clearCart = () => {
+    setCart({});
+    localStorage.removeItem('cart');
+  };
+
   return {
     cart,
     addItem,
     removeItem,
     changeQuantity,
+    clearCart,
   };
 };

@@ -1,5 +1,5 @@
 import styles from './page.module.css';
-import { ProductsGallery } from '@/widgets';
+import { ProductsGallery, ShoppingCart } from '@/widgets';
 import { ReviewsList } from '@/widgets/ReviewsList/ReviewsList';
 
 export default function Home() {
