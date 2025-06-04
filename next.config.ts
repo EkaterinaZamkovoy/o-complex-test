@@ -2,15 +2,7 @@ import type { NextConfig } from 'next';
 
 const path = require('path');
 
-const repoName = 'o-complex-test';
-
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}`,
-  images: {
-    unoptimized: true,
-  },
   async rewrites() {
     return [
       {
