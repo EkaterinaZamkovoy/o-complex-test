@@ -3,6 +3,12 @@ import type { NextConfig } from 'next';
 const path = require('path');
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  basePath: '/o-complex-test',
+  assetPrefix: '/o-complex-test',
+  images: {
+    unoptimized: true,
+  },
   async rewrites() {
     return [
       {
