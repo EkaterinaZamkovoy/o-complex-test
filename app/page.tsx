@@ -1,12 +1,13 @@
-import Image from 'next/image';
 import styles from './page.module.css';
 import { ProductsGallery } from '@/widgets';
+import { ReviewsList } from '@/widgets/ReviewsList/ReviewsList';
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <ProductsGallery></ProductsGallery>
+        <ReviewsList />
+        <ProductsGallery />
       </main>
     </div>
   );
