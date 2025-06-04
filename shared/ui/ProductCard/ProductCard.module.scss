@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  max-width: 301px;
+  max-height: 812px;
+  height: 100%;
+  background-color: $secondary-background-color;
+  padding: 9px 10px;
+}
+
+.image {
+  width: 281px;
+  height: 366px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.description {
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 400;
+}
+
+.price {
+  font-size: 36px;
+}
+
+.buyButton {
+  padding: 10px 16px;
+  background-color: $main-background-color;
+  color: $light-text-color;
+  font-size: 36px;
+  font-weight: 400;
+  border-radius: 15px;
+  width: 100%;
+  border: 2px solid $main-background-color;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.buyButton:hover {
+  background-color: $light-text-color;
+  color: $main-background-color;
+  border: 2px solid $main-background-color;
+}
+
+.buyButton:active {
+  background-color: $main-background-color;
+  color: $light-text-color;
+}
+
+.counter {
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.counter button {
+  width: 68px;
+  height: 68px;
+  font-size: 36px;
+  border: none;
+  border-radius: 6px;
+  background-color: $main-background-color;
+  color: $light-text-color;
+  cursor: pointer;
+}
+
+.counter button:hover {
+  background-color: $alternative-background-color;
+}
+
+.counter input {
+  width: 128px;
+  height: 68px;
+  text-align: center;
+  font-size: 36px;
+  border: 1px solid $alternative-background-color;
+  background-color: $main-background-color;
+  color: $light-text-color;
+  border-radius: 6px;
+}
